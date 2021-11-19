@@ -23,6 +23,7 @@ export default new Vuex.Store({
     getMovies ({ commit }, palabra) {
       axios.get(`http://www.omdbapi.com/?apikey=51298010&s=${palabra}`).then((response) => {
         commit('setMovies', response.data.Search)
+        console.log(this.state.movies)
       })
     },
     getMovie ({ commit }, id) {
